@@ -25,8 +25,8 @@ public class PostService {
     }
 
     public void modify(Post post, String title, String content) {
-        post.setTitle(title);
-        post.setContent(content);
+        post.title = title;
+        post.content = content;
     }
 
     public Post write(Member author, String title, String content) {

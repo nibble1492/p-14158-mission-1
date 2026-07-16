@@ -26,8 +26,8 @@ public class PostRepositoryTest {
     void t1() {
         Post post2 = postRepository.findById(2).get();
 
-        assertThat(post2.getTitle()).isEqualTo("제목 2");
-        assertThat(post2.getContent()).isEqualTo("내용 2");
+        assertThat(post2.title).isEqualTo("제목 2");
+        assertThat(post2.content).isEqualTo("내용 2");
     }
 
     @Test
@@ -40,8 +40,8 @@ public class PostRepositoryTest {
         postRepository.save(post);
 
         assertThat(post.id).isGreaterThan(0);
-        assertThat(post.getTitle()).isEqualTo("제목 new");
-        assertThat(post.getContent()).isEqualTo("내용 new");
+        assertThat(post.title).isEqualTo("제목 new");
+        assertThat(post.content).isEqualTo("내용 new");
     }
 
     @Test
