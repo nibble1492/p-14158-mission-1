@@ -34,7 +34,7 @@ dependencies {
 
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     implementation(kotlin("stdlib-jdk8"))
-
+    implementation(kotlin("reflect"))
 }
 
 kotlin {
