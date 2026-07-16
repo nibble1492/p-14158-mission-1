@@ -35,11 +35,11 @@ public class PostRepositoryTest {
     void t2() {
         Member memberUser1 = memberRepository.findById(3).get();
         Post post = new Post(memberUser1, "제목 new", "내용 new");
-        assertThat(post.getId()).isEqualTo(0);
+        assertThat(post.id).isEqualTo(0);
 
         postRepository.save(post);
 
-        assertThat(post.getId()).isGreaterThan(0);
+        assertThat(post.id).isGreaterThan(0);
         assertThat(post.getTitle()).isEqualTo("제목 new");
         assertThat(post.getContent()).isEqualTo("내용 new");
     }

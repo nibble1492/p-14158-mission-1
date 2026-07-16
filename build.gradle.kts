@@ -1,7 +1,10 @@
 plugins {
     java
-    id("org.springframework.boot") version "4.0.6"
+    kotlin("jvm") version "2.3.21"
+    kotlin("plugin.spring") version "2.3.21"
+    id("org.springframework.boot") version "4.1.0"
     id("io.spring.dependency-management") version "1.1.7"
+    kotlin("plugin.jpa") version "2.3.21"
 }
 
 group = "com"
@@ -30,8 +33,22 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-webmvc-test")
 
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    implementation(kotlin("stdlib-jdk8"))
 
 }
+
+kotlin {
+    compilerOptions {
+        freeCompilerArgs.addAll("-Xjsr305=strict", "-Xannotation-default-target=param-property")
+    }
+}
+
+allOpen {
+    annotation("jakarta.persistence.Entity")
+    annotation("jakarta.persistence.MappedSuperclass")
+    annotation("jakarta.persistence.Embeddable")
+}
+
 
 tasks.withType<Test> {
     useJUnitPlatform()
