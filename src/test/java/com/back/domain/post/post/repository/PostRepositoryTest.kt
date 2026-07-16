@@ -40,7 +40,7 @@ class PostRepositoryTest {
         val memberUser1 = memberRepository.findByIdOrNull(3) ?: throw NoSuchElementException()
         val post = Post(memberUser1, "제목 new", "내용 new")
 
-        // ★ 중요: id가 Int? = null로 바뀌었으므로 저장 전 검증은 isNull()이어야 합니다.
+        // id가 Int? = null로 바뀌었으므로 저장 전 검증은 isNull()이어야 합니다.
         assertThat(post.id).isNull()
 
         // 4. 불필요한 제네릭 인수(<Post?>) 생략

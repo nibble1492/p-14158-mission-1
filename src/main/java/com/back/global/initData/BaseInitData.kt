@@ -14,12 +14,10 @@ class BaseInitData(
     private val memberService: MemberService,
     private val postService: PostService
 ) {
-    // 1. lateinit var를 사용하여 널 안정성 확보 및 !! 제거
     @Autowired
     @Lazy
     private lateinit var self: BaseInitData
 
-    // 2. 단일 표현식 함수 및 람다 매개변수 생략
     @Bean
     fun baseInitDataApplicationRunner(): ApplicationRunner = ApplicationRunner {
         self.work1()

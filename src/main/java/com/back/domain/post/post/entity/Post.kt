@@ -9,12 +9,12 @@ import jakarta.persistence.ManyToOne
 @Entity
 class Post(
     @ManyToOne // N:1 관계
-    var author: Member? = null, // 작성자는 Nullable하게 유지 (또는 필요에 따라 필수값 지정 가능)
+    val author: Member,
 
-    var title: String = "",
+    var title: String,
 
     @Column(columnDefinition = "TEXT")
-    var content: String = ""
+    var content: String
 ) : BaseEntity() {
 
     override fun toString(): String {

@@ -7,9 +7,9 @@ import jakarta.persistence.Entity
 @Entity
 class Member(
     @Column(unique = true)
-    var username: String = "",
-    var password: String = "",
-    var nickname: String = ""
+    val username: String,
+    var password: String,
+    var nickname: String
 ) : BaseEntity() {
 
     override fun toString(): String {

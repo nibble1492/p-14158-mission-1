@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service
 @Service
 class MemberService(private val memberRepository: MemberRepository) {
 
-    fun count(): Long = memberRepository.count()
+    fun count() = memberRepository.count()
 
     fun join(username: String, password: String, nickname: String): Member =
         memberRepository.save(Member(username, password, nickname))
